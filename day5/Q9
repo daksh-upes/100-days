@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+float p, r, t, simple, compound;
+printf("Enter principal: ");
+scanf("%f", &p);
+printf("Enter rate (%%): ");
+scanf("%f", &r);
+printf("Enter time (years): ");
+scanf("%f", &t);
+simple = (p * r * t) / 100;
+compound = p * pow(1 + r / 100, t) - p;
+printf("Simple Interest = %.2f\n", simple);
+printf("Compound Interest = %.2f\n", compound);
+return 0;
+}

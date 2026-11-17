@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {
+long long n;
+int count[10] = {0}; int i, maxDigit = 0;
+// count[d] = how many times digit d appears
+printf("Enter a number: ");
+scanf("%lld", &n);
+if (n == 0) count[0] = 1;
+while (n > 0) {
+count[n % 10]++; n = n / 10;
+// count the last digit
+}
+for (i = 1; i < 10; i++) {
+if (count[i] > count[maxDigit]) {
+maxDigit = i;
+}
+}
+printf("Digit %d occurs the most (%d times)\n", maxDigit, count[maxDigit]);
+return 0;
+}

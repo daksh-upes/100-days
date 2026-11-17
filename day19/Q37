@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+int a, b, x, y, temp;
+printf("Enter two numbers: ");
+scanf("%d %d", &a, &b);
+// find HCF of a and b (using copies x, y)
+x = a;
+y = b;
+while (y != 0) {
+temp = y;
+y = x % y;
+x = temp;
+}
+long long lcm = (long long)a * b / x; printf("LCM = %lld\n", lcm);
+return 0;
+// x is the HCF now
+}

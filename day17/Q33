@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main() {
+int n, original, digits = 0, sum = 0, temp, i;
+printf("Enter a number: ");
+scanf("%d", &n);
+original = n;
+// Step 1: count digits
+temp = n;
+while (temp > 0) {
+digits++;
+temp = temp / 10;
+}
+// Step 2: add digit^digits for every digit
+temp = n;
+while (temp > 0) {
+int d = temp % 10;
+int power = 1;
+for (i = 1; i <= digits; i++) {
+power = power * d;
+}
+sum = sum + power;
+temp = temp / 10;
+}
+if (sum == original)
+printf("%d is an Armstrong number\n", original);
+else
+printf("%d is not an Armstrong number\n", original);
+return 0;
+}

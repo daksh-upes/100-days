@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main() {
+int n, first, last, power = 1, middle, temp;
+printf("Enter a number: ");
+scanf("%d", &n);
+if (n < 10) { printf("Result = %d\n", n);
+return 0;
+// single digit: nothing to swap
+}
+last = n % 10;
+// find the first digit and power = 10^(digits-1)
+temp = n;
+while (temp >= 10) {
+temp = temp / 10;
+power = power * 10;
+}
+first = temp;
+middle = (n % power) / 10; int result = last * power + middle * 10 + first;
+printf("Result = %d\n", result);
+return 0;
+// remove first and last digits
+}

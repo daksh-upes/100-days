@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main() {
+long long n, result = 0, place = 1;
+int digit, bits = 0;
+printf("Enter a binary number: ");
+scanf("%lld", &n);
+while (n > 0) {
+digit = n % 10;
+if (digit != 0 && digit != 1) {
+printf("Not a binary number!\n");
+return 0;
+}
+result = result + (1 - digit) * place; place = place * 10;
+bits++;
+n = n / 10;
+// flip the bit
+}
+// print with leading zeros so the length matches the input
+printf("1's complement = ");
+long long p = place / 10;
+int i;
+for (i = 0; i < bits; i++) {
+printf("%lld", (result / p) % 10);
+p = p / 10;
+}
+printf("\n");
+return 0;
+}

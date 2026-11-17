@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+int a, b, c;
+printf("Enter three sides: ");
+scanf("%d %d %d", &a, &b, &c);
+// Valid triangle: sides are positive and any two sides add up to more than the third
+if (a <= 0 || b <= 0 || c <= 0 || a + b <= c || a + c <= b || b + c <= a) {
+printf("Not a valid triangle\n");
+} else if (a == b && b == c) {
+printf("Equilateral\n"); // all 3 sides equal
+} else if (a == b || b == c || a == c) {
+printf("Isosceles\n"); // any 2 sides equal
+} else {
+printf("Scalene\n"); // all sides different
+}
+return 0;
+}

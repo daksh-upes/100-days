@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main() {
+int arr[100], n, i, left, right, temp;
+printf("Enter number of elements: ");
+scanf("%d", &n);
+printf("Enter elements: ");
+for (i = 0; i < n; i++) {
+scanf("%d", &arr[i]);
+}
+left = 0;
+right = n - 1;
+while (left < right) {
+temp = arr[left]; arr[left] = arr[right];
+arr[right] = temp;
+left++;
+right--;
+// swap arr[left] and arr[right]
+}
+printf("Reversed array: ");
+for (i = 0; i < n; i++) {
+printf("%d ", arr[i]);
+}
+printf("\n");
+return 0;
+}

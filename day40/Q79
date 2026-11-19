@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main() {
+int a[10][10], r, c, i, j, s;
+printf("Enter rows and columns: ");
+scanf("%d %d", &r, &c);
+printf("Enter matrix elements:\n");
+for (i = 0; i < r; i++)
+for (j = 0; j < c; j++)
+scanf("%d", &a[i][j]);
+printf("Diagonal traversal:\n");
+for (s = 0; s <= r + c - 2; s++) { for (i = 0; i < r; i++) {
+j = s - i; if (j >= 0 && j < c) {
+printf("%d ", a[i][j]);
+}
+}
+printf("\n");
+}
+return 0;
+// s = i + j
+// column that belongs to this diagonal
+}

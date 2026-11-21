@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main() {
+char str[300], temp;
+int i = 0, start, end, left, right;
+printf("Enter a sentence: ");
+scanf(" %[^\n]", str);
+while (str[i] != '\0') {
+if (str[i] != ' ') {
+start = i;
+while (str[i] != ' ' && str[i] != '\0') i++; end = i - 1;
+// go to end of word
+left = start; right = end;
+while (left < right) {
+temp = str[left];
+str[left] = str[right];
+str[right] = temp;
+left++;
+right--;
+// reverse this word
+}
+} else {
+i++; // skip space
+}
+}
+printf("Result: %s\n", str);
+return 0;
+}

@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main() {
+char str[200];
+int seen[26] = {0}; int i, found = 0;
+// seen[0] is 'a', seen[1] is 'b', ...
+printf("Enter a string: ");
+scanf(" %[^\n]", str);
+for (i = 0; str[i] != '\0'; i++) {
+if (str[i] >= 'a' && str[i] <= 'z') {
+int index = str[i] - 'a';
+if (seen[index] == 1) {
+printf("First repeating character: %c\n", str[i]);
+found = 1;
+break;
+}
+seen[index] = 1;
+}
+}
+if (!found) printf("No repeating character\n");
+return 0;
+}

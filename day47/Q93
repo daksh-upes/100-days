@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {
+char s1[100], s2[100];
+int count[26] = {0};
+int i, isAnagram = 1;
+printf("Enter first string: ");
+scanf("%s", s1);
+printf("Enter second string: ");
+scanf("%s", s2);
+for (i = 0; s1[i] != '\0'; i++) count[s1[i] - 'a']++; for (i = 0; s2[i] != '\0'; i++) count[s2[i] - 'a']--; // add letters of s1
+// remove letters of s2
+for (i = 0; i < 26; i++) {
+if (count[i] != 0) {
+isAnagram = 0;
+}
+}
+if (isAnagram) printf("The strings are anagrams\n");
+else printf("The strings are not anagrams\n");
+return 0;
+}

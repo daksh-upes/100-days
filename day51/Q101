@@ -1,0 +1,41 @@
+#include <stdio.h>
+// returns the first index of target, or -1
+int findFirst(int arr[], int n, int target) {
+int low = 0, high = n - 1, ans = -1;
+while (low <= high) {
+int mid = (low + high) / 2;
+if (arr[mid] == target) {
+ans = mid; high = mid - 1;
+} else if (arr[mid] < target) {
+low = mid + 1;
+} else {
+high = mid - 1;
+// remember it, but look further left
+}
+}
+return ans;
+}
+// returns the last index of target, or -1
+int findLast(int arr[], int n, int target) {
+int low = 0, high = n - 1, ans = -1;
+while (low <= high) {
+int mid = (low + high) / 2;
+if (arr[mid] == target) {
+ans = mid; low = mid + 1;
+} else if (arr[mid] < target) {
+low = mid + 1;
+} else {
+high = mid - 1;
+// remember it, but look further right
+}
+}
+return ans;
+}
+int main() {
+int arr[100], n, i, target;
+scanf("%d", &n);
+for (i = 0; i < n; i++) scanf("%d", &arr[i]);
+scanf("%d", &target);
+printf("%d, %d\n", findFirst(arr, n, target), findLast(arr, n, target));
+return 0;
+}

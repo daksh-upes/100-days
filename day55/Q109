@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main() {
+int n, k, arr[100];
+scanf("%d", &n);
+for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
+scanf("%d", &k);
+// sum of the first window
+int windowSum = 0;
+for (int i = 0; i < k; i++) windowSum += arr[i];
+int maxSum = windowSum;
+// slide the window: add the new element, remove the old one
+for (int i = k; i < n; i++) {
+windowSum = windowSum + arr[i] - arr[i - k];
+if (windowSum > maxSum) maxSum = windowSum;
+}
+printf("%d", maxSum);
+return 0;
+}

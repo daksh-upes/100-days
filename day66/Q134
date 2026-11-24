@@ -1,0 +1,16 @@
+#include <stdio.h>
+enum Status { SUCCESS, FAILURE, TIMEOUT };
+int main() {
+enum Status s;
+int input;
+printf("Enter 0 (SUCCESS), 1 (FAILURE), 2 (TIMEOUT): ");
+scanf("%d", &input);
+s = input;
+switch (s) {
+case SUCCESS: printf("Operation successful"); break;
+case FAILURE: printf("Operation failed"); break;
+case TIMEOUT: printf("Operation timed out"); break;
+default: printf("Unknown status");
+}
+return 0;
+}

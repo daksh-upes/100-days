@@ -1,0 +1,14 @@
+#include <stdio.h>
+enum Light { RED, YELLOW, GREEN };
+int main() {
+enum Light light;
+int input;
+printf("Enter 0 (RED), 1 (YELLOW), 2 (GREEN): ");
+scanf("%d", &input);
+light = input;
+if (light == RED) printf("Stop");
+else if (light == YELLOW) printf("Wait");
+else if (light == GREEN) printf("Go");
+else printf("Invalid");
+return 0;
+}

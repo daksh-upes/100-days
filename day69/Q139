@@ -1,0 +1,11 @@
+#include <stdio.h>
+enum Level { LOW = 5, MEDIUM = 15, HIGH = 25 };
+int main() {
+// %d works on enum values because they are plain integers
+printf("LOW = %d\n", LOW);
+printf("MEDIUM = %d\n", MEDIUM);
+printf("HIGH = %d\n", HIGH);
+int x = MEDIUM + 1; printf("MEDIUM + 1 = %d", x);
+return 0;
+// we can even do math with them
+}
